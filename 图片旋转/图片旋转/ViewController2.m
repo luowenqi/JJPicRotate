@@ -3,7 +3,7 @@
 //  图片旋转
 //
 //  Created by 罗文琦 on 2017/11/20.
-//  Copyright © 2017年 罗文琦. All rights reserved.
+//  Copyright © 2017年 罗文琦. All rights res
 //
 
 #import "ViewController2.h"
