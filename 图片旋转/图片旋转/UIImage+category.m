@@ -1,6 +1,6 @@
 //
 //  UIImage+MUCommon.h
-//  BigCalculate
+//  BigCalculat
 //
 //  Created by 罗文琦 on 16/10/27.
 //  Copyright © 2016年 罗文琦. All rights reserved.
