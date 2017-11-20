@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.imageView.image  =  [UIImage fixOrientation:self.imageView.image];//修正图片本身的旋转
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,9 +49,13 @@
         }
         self.imageView.transform = CGAffineTransformScale(self.imageView.transform,kSacale, kSacale);
     }
+   
+}
+
+
+- (IBAction)saveResult:(id)sender {
     //使用绘制的方法得到旋转之后的图片
     double rotationZ = [[self.imageView.layer valueForKeyPath:@"transform.rotation.z"] doubleValue];
-    self.imageView.image  =  [UIImage fixOrientation:self.imageView.image];//修正图片本身的旋转
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.imageView.image.size.width, self.imageView.image.size.height)];
     CGAffineTransform t = CGAffineTransformMakeRotation(rotationZ);
     rotatedViewBox.transform = t;
@@ -65,7 +70,9 @@
     UIGraphicsEndImageContext();
     //把最终的图片存到相册看看是否成功
     UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil);
+    
 }
+
 
 
 
